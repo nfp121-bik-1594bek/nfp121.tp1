@@ -34,6 +34,7 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
      * Constructeur de la classe-test AuditeurCNAMTest.
      */
     public AuditeurCNAMTest() {
+        
     }
 
     /**

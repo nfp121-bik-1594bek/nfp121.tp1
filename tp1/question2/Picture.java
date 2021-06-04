@@ -21,6 +21,7 @@ public class Picture {
     private Triangle roof;
     private Circle sun, blue_sun;
     private int yPosition;
+    private boolean terrefixe = false; //Valeur par default
     
 
     /**
@@ -78,7 +79,17 @@ public class Picture {
             sun.changeColor("black");
         }
     }
-
+    /**
+     * Change the status of the earth
+     */
+    public void setEarth(boolean earth_status){
+        this.terrefixe = earth_status;
+        if (earth_status == false){
+        System.out.println("The earth now isn't fixed");
+        }else{
+            System.out.println("The earth is now fixed");
+        }
+    }
     /**
      * Change this picture to use color display
      */
@@ -93,7 +104,12 @@ public class Picture {
     }
     
     public void sunset(int distance) {
-        blue_sun.slowMoveVertical(distance);
+        if (this.terrefixe == true){
+            blue_sun.slowMoveVertical(distance);
+            System.out.println("The blue sun was slowly moved vertically");
+    }else {
+        System.out.println("The earth isn't fixed, you can't move the blue sun");
     }
 
+}
 }
